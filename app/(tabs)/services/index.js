@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -6,9 +6,8 @@ import {
   FlatList,
   ActivityIndicator,
   SafeAreaView,
-} from 'react-native';
+} from "react-native";
 
-// Example of a simple custom card (replace with a 3D styled one later)
 function ThreeDCardDemo({ services }) {
   return (
     <FlatList
@@ -31,14 +30,14 @@ export default function Services() {
 
   useEffect(() => {
     // Replace with your backend endpoint or local API in React Native
-    fetch('https://centreorg.vercel.app/api/services')
+    fetch("https://centreorg.vercel.app/api/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
         setLoading(false);
       })
       .catch((err) => {
-        console.error('Error fetching services:', err);
+        console.error("Error fetching services:", err);
         setLoading(false);
       });
   }, []);
@@ -67,52 +66,52 @@ export default function Services() {
 const styles = StyleSheet.create({
   spinnerContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f3f4f6', // Light gray
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f3f4f6",
   },
   container: {
     flex: 1,
-    backgroundColor: '#f3f4f6',
+    backgroundColor: "#f3f4f6",
   },
   inner: {
     padding: 20,
-    alignItems: 'center',
+    alignItems: "center",
   },
   heading: {
     fontSize: 28,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#111',
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#111",
     marginVertical: 10,
   },
   subHeading: {
     fontSize: 16,
-    textAlign: 'center',
-    color: '#666',
+    textAlign: "center",
+    color: "#666",
     marginBottom: 20,
   },
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     padding: 16,
     borderRadius: 12,
     marginBottom: 16,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
     elevation: 4,
     width: 320,
-    alignSelf: 'center',
+    alignSelf: "center",
   },
   cardTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#111',
+    fontWeight: "bold",
+    color: "#111",
     marginBottom: 8,
   },
   cardDesc: {
     fontSize: 14,
-    color: '#555',
+    color: "#555",
   },
 });

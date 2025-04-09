@@ -1,51 +1,63 @@
-# Welcome to your Expo app 👋
+# 📱 Centre Org App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+The **official mobile app** of **Centre Private Limited** – a student-led non-profit delivering creative and technical services including **photography**, **videography**, **event planning**, and more. Designed exclusively for our 17 core members, this app provides a secure, responsive, and modern digital experience to manage organizational operations and activities.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Overview
 
-   ```bash
-   npm install
-   ```
+The **Centre Org App** is a mobile-first internal platform that empowers members with:
 
-2. Start the app
+- 📄 Access to organization info and structure  
+- 🧭 Smooth navigation across core sections: **About**, **Services**, **Events**, and **Contact**  
+- 🔐 Authentication system with **Role-Based Access Control (RBAC)**  
+- 🎮 Dedicated areas for **Gaming** and **Hackathon** team updates  
+- 📅 Event management and calendar integration  
+- 💬 Internal communication tools (planned)  
+- 🌐 API integration with Centre’s backend (coming soon)
 
-   ```bash
-    npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🌟 Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- 🔑 Secure login with role-based permissions (Admin, Member, Guest)
+- 📚 Dynamic content for events, services, and updates
+- 🎨 Clean and minimal UI built with modular components
+- 📱 Cross-platform (iOS and Android)
+- 🌈 Smooth animations using Reanimated and Lottie
+- 🔔 Push notifications (coming soon)
+- 🧾 In-app member directory and profile system (planned)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🛠️ Tech Stack
 
-When you're ready, run:
+| Category         | Tools & Technologies                |
+|------------------|-------------------------------------|
+| **Frontend**     | React Native, Expo, TypeScript      |
+| **Navigation**   | React Navigation                    |
+| **Animations**   | Lottie, Reanimated                  |
+| **Auth**         | Firebase Auth / Custom API (TBD)    |
+| **State Mgmt**   | Context API / Redux Toolkit (planned) |
+| **Backend**      | Node.js, Express.js, MongoDB (WIP)  |
+| **Design**       | Figma (UI/UX)                       |
+
+---
+
+## 📦 Getting Started
+
+### ✅ Prerequisites
+
+- Node.js (v16+)
+- npm or yarn
+- Expo CLI (`npm install -g expo-cli`)
+- Android Studio / Xcode (for device testing)
+
+### 🧪 Installation
 
 ```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-# centre-app
+git clone https://github.com/nileshkumaryadav1/centre-app.git
+cd centre-app
+npm install
+# or
+yarn install

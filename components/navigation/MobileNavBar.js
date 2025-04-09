@@ -1,6 +1,11 @@
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet, useColorScheme } from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import {
+  View,
+  TouchableOpacity,
+  StyleSheet,
+  useColorScheme,
+} from 'react-native';
+import { useRouter, usePathname } from 'expo-router';
 import {
   Home,
   User,
@@ -10,67 +15,42 @@ import {
 } from 'lucide-react-native';
 
 const MobileNavbar = () => {
-  const navigation = useNavigation();
-  const route = useRoute();
+  const router = useRouter();
+  const pathname = usePathname();
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
 
-  const currentRoute = route.name;
+  const navItems = [
+    { label: 'Home', icon: Home, route: '/' },
+    { label: 'Services', icon: BetweenHorizonalStart, route: '/services' },
+    { label: 'Calendar', icon: Calendar, route: '/calendar' },
+    { label: 'Blog', icon: PenBox, route: '/blog' },
+    { label: 'Members', icon: User, route: '/members' },
+  ];
 
   return (
     <View style={[styles.navbar, isDark && styles.navbarDark]}>
-      <NavItem
-        label="Home"
-        icon={Home}
-        screen="Home"
-        active={currentRoute === 'Home'}
-        onPress={() => navigation.navigate('Home')}
-      />
-      <NavItem
-        label="Services"
-        icon={BetweenHorizonalStart}
-        screen="Services"
-        active={currentRoute === 'Services'}
-        onPress={() => navigation.navigate('Services')}
-      />
-      <NavItem
-        label="Calendar"
-        icon={Calendar}
-        screen="Calendar"
-        active={currentRoute === 'Calendar'}
-        onPress={() => navigation.navigate('Calendar')}
-      />
-      <NavItem
-        label="Blog"
-        icon={PenBox}
-        screen="Blog"
-        active={currentRoute === 'Blog'}
-        onPress={() => navigation.navigate('Blog')}
-      />
-      <NavItem
-        label="Members"
-        icon={User}
-        screen="Members"
-        active={currentRoute === 'Members'}
-        onPress={() => navigation.navigate('Members')}
-      />
+      {navItems.map((item) => (
+        <NavItem
+          key={item.label}
+          label={item.label}
+          icon={item.icon}
+          active={pathname === item.route}
+          onPress={() => router.push(item.route)}
+        />
+      ))}
     </View>
   );
 };
 
-const NavItem = ({ icon: Icon, label, active, onPress }) => {
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={[
-        styles.navItem,
-        active && styles.activeItem,
-      ]}
-    >
-      <Icon color={active ? '#3b82f6' : '#333'} size={24} />
-    </TouchableOpacity>
-  );
-};
+const NavItem = ({ icon: Icon, active, onPress }) => (
+  <TouchableOpacity
+    onPress={onPress}
+    style={[styles.navItem, active && styles.activeItem]}
+  >
+    <Icon color={active ? '#3b82f6' : '#333'} size={24} />
+  </TouchableOpacity>
+);
 
 const styles = StyleSheet.create({
   navbar: {
